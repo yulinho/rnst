@@ -2,7 +2,7 @@
 
 [![Join the chat at https://gitter.im/start-react/native-starter](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/start-react/native-starter?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
-This is a simple starter project for React Native apps on iOS (Android coming soon).
+This is a simple starter project for React Native apps on iOS and Android.
 
 Find out more [Free React.js and React Native Themes at StartReact.com](http://www.startreact.com/).
 
@@ -11,6 +11,8 @@ Find out more [Free React.js and React Native Themes at StartReact.com](http://w
 ![Login Screen](/Screenshots/login.png "Login Screen")
 ![Home Screen](/Screenshots/home.png "Dashboard Screen")
 ![App Drawer](/Screenshots/drawer.png "App Drawer")
+
+##[Demo](https://rnplay.org/apps/vPqdqA) 
 
 
 ## Installation
@@ -37,7 +39,3 @@ $ npm install
 ####4. Open the project in XCode from ios/NativeStarterKit.xcodeproj
 ####5. Hit the play button (Cmd + R)
 
-
-## Roadmap
-- Put an example on [rnplay.org](http://rnplay.org)
-- Add support for Android
