@@ -7,9 +7,8 @@
   },
   "dependencies": {
     "flux": "^2.1.1",
-    "react-native": "^0.13.2",
+    "react-native": "0.17",
     "react-native-drawer": "^1.6.0",
-    "react-native-navbar": "^1.0.3",
-    "react-native-responsive-image": "^1.0.0"
+    "react-native-navbar": "1.1.7"
   }
 }

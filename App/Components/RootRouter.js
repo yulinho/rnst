@@ -1,5 +1,5 @@
 var React = require('react-native');
-var Drawer = require('react-native-drawer')
+var Drawer = require('react-native-drawer');
 
 var AppDispatcher = require('./../Dispatcher/AppDispatcher');
 var ControlPanel = require('./ControlPanel');

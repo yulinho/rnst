@@ -10,13 +10,6 @@ var {
 module.exports = StyleSheet.create({
 	textInput: {
 		height: 40, 
-		borderColor: 'rgba(255, 255, 255, 0.4)',
-		borderWidth: 2,
-		borderTopColor: 'transparent',
-		borderLeftColor: 'transparent',
-		borderRightColor: 'transparent',
-		margin: 15,
-		marginTop: 5,
 		backgroundColor: 'transparent',
 		color: 'rgba(255, 255, 255, 0.9)',
 		paddingLeft: 10,
@@ -25,6 +18,7 @@ module.exports = StyleSheet.create({
 		backgroundColor: '#3B3738',
 		flex: 1,
 		justifyContent: 'center',
+		padding: 15
 
 	},
 	loginLogo: {
@@ -35,11 +29,27 @@ module.exports = StyleSheet.create({
         resizeMode: 'stretch'
     },
 	logo: {
-		marginBottom: 80,
-		marginTop: -70,
-		alignSelf: 'center'
+		marginBottom: 60,
+		marginTop: -50,
+		alignSelf: 'center',
+		width: 250,		
+		height: 250,		
+		resizeMode: 'stretch'
 	},
 	navbar: {
 		borderBottomColor: 'transparent',
+	},
+	border: {
+		alignSelf: 'stretch',
+		position: 'relative',										
+		borderColor: 'rgba(255,255,255,0.5)',
+		borderBottomWidth: 1,
+		borderTopWidth: 0,
+		borderLeftWidth: 0,
+		borderRightWidth: 0,
+		marginTop: 15,
+		marginRight: 10,
+		marginLeft: 10,
+		height: 40
 	}
 });
