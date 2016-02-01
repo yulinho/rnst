@@ -6,13 +6,10 @@ This is a simple starter project for React Native apps on iOS and Android.
 
 Find out more [Free React.js and React Native Themes at StartReact.com](http://www.startreact.com/).
 
-## Screenshots
+## Demo
 
-![Login Screen](/Screenshots/login.png "Login Screen")
-![Home Screen](/Screenshots/home.png "Dashboard Screen")
-![App Drawer](/Screenshots/drawer.png "App Drawer")
+![Demo](/Screenshots/demo.gif "Login Screen")
 
-##[Demo](https://rnplay.org/apps/vPqdqA) 
 
 
 ## Installation
