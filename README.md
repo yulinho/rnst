@@ -27,7 +27,7 @@ https://nodejs.org/en/download/
 ####3. On the command prompt run the following commands
 
 ```sh
-$ cd NativeStarterKit
+$ cd NativeStarter
 ```
 ```sh
 $ npm install 
@@ -35,7 +35,7 @@ $ npm install
 
 ####4.1. To Run the project using XCode
 
-Open the project in XCode from ios/NativeStarterKit.xcodeproj
+Open the project in XCode from ios/NativeStarter.xcodeproj
 
 Hit the play button (&#8984; + R)
 
