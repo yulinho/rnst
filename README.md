@@ -27,7 +27,7 @@ https://nodejs.org/en/download/
 ####3. On the command prompt run the following commands
 
 ```sh
-$ cd NativeStarter
+$ cd native-starter-kit/
 ```
 ```sh
 $ npm install 
