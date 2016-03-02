@@ -34,5 +34,5 @@ $ npm install
 ```
 
 ####4. Open the project in XCode from ios/NativeStarterKit.xcodeproj
-####5. Hit the play button (Cmd + R)
+####5. Hit the play button (&#8984; + R)
 
