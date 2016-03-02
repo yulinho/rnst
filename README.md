@@ -33,11 +33,12 @@ $ cd NativeStarterKit
 $ npm install 
 ```
 
+<<<<<<< HEAD
 ####4.1. To Run the project using XCode
 
 Open the project in XCode from ios/NativeStarterKit.xcodeproj
 
-Hit the play button (Cmd + R)
+Hit the play button (&#8984; + R)
 
 
 ####4.2. To Run the project from Terminal
