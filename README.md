@@ -33,6 +33,17 @@ $ cd NativeStarterKit
 $ npm install 
 ```
 
-####4. Open the project in XCode from ios/NativeStarterKit.xcodeproj
-####5. Hit the play button (Cmd + R)
+####4.1. To Run the project using XCode
+
+Open the project in XCode from ios/NativeStarterKit.xcodeproj
+
+Hit the play button (Cmd + R)
+
+
+####4.2. To Run the project from Terminal
+
+```sh
+$ react-native run-ios
+```
+
 

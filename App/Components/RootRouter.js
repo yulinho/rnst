@@ -1,95 +1,57 @@
-var React = require('react-native');
-var Drawer = require('react-native-drawer');
+'use strict';
 
-var AppDispatcher = require('./../Dispatcher/AppDispatcher');
-var ControlPanel = require('./ControlPanel');
-var styles = require('./../Styles/style');
-var Login = require('./../Components/Login');
-var Button = require('./../Components/Button');
+import React, {Component, Navigator, Text, View} from 'react-native';
+import {Router, Route, Schema} from 'react-native-router-flux';
+import EventEmitter from 'EventEmitter';
+import Drawer from 'react-native-drawer'
+import ControlPanel from './Widgets/ControlPanel';
+import Login from './Login';
+import Home from './Home';
+import Account from './Account';
+import layout from '../Styles/layout';
+import AppEventEmitter from '../Services/AppEventEmitter';
 
-var {  
-    Navigator,
-    InteractionManager
-} = React;
+export default class RootRouter extends Component {
 
+	componentDidMount() {
+		AppEventEmitter.addListener('hamburger.click', this.openControlPanel.bind(this));
+    }
 
+    componentWillUnMount() {
+    	AppEventEmitter.removeListener('hamburger.click');
+    }
 
-var Router = React.createClass({
-    closeControlPanel: function(){
-        this.refs.drawer.close()
-    },
+	closeControlPanel(navigation) {
+		if(navigation.type == 'AFTER_ROUTER_ROUTE') {
+			this.refs.drawer.close();
+		}
+	}
 
-    openControlPanel: function(){
-        this.refs.drawer.open()
-    },
-   
-    componentDidMount: function(){
-        InteractionManager.runAfterInteractions(() => {
-          this.setState({isReady: true});
-        });
-        var that =this;
-        AppDispatcher.register(function(payload){
-            switch (payload.actionType) {
-                case 'Navigate':
-                    that.closeControlPanel();
-                    that.refs.navigator.push(
-                    {
-                    component: payload.component,
-                    sceneConfig: Navigator.SceneConfigs.FadeAndroid
-                })
-            break;
-                case 'Back' :
-                    that.refs.navigator.pop()
-            break;
-                case 'Open' :
-                    that.openControlPanel()
-            break;
-            }
-      });
-        console.log(AppDispatcher);
-    },
-    render: function() {
-        return (
-             <Drawer
-                ref="drawer"
-                type="overlay"
-                openDrawerOffset={50} 
-                panCloseMask={1} 
-                styles={{
-                    drawer: {
-                        shadowColor: "#000000",
-                        shadowOpacity: 0.8,
-                        shadowRadius: 0,                    
-                        backgroundColor: '#7ACECC'
-                    }
-                }}
-                tweenHandler={(ratio) => {
-                    return {
-                        drawer: { shadowRadius: Math.min(ratio*5*5, 5) },
-                        main: { opacity:(2-ratio)/2 },
-                    }
-                }}
-                content={ <ControlPanel close=
-                    { this.closeControlPanel }/> }
-                >                
-                <Navigator
-                    ref='navigator'
-                    initialRoute={{name: 'Login', component: Login}}
-                    configureScene={() => {
-                        return Navigator.SceneConfigs.FloatFromRight;
-                    }}
-                    renderScene={(route, navigator) => {
-                        console.log(route); 
+	openControlPanel() {
+	   this.refs.drawer.open();
+	}
 
-                        if (route.component) {
-                            return React.createElement(route.component, { navigator });
-                        }
-                    }}
-                />
+    render() {
+        return(
+        	<Drawer
+        		style={{marginBottom: 20}}
+				ref="drawer"
+				type="overlay"				
+  				tapToClose={true}
+				openDrawerOffset={0.2}
+				panCloseMask={0.2}
+				content={<ControlPanel />}
+				>
+					<View style={layout.layout}>
+
+			            <Router hideNavBar={true} dispatch={this.closeControlPanel.bind(this)}>
+			                <Schema name="default" sceneConfig={Navigator.SceneConfigs.FloatFromRight}/> 
+			                <Route name="login" component={Login} initial={true}/>
+			                <Route name="home" wrapRouter={false} component={Home} title="Home" />               
+			                <Route name="account" wrapRouter={false} component={Account} title="Account" />               
+			            </Router>
+		            </View>
             </Drawer>
         );
     }
-});
-
-
-module.exports = Router;
+}

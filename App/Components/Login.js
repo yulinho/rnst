@@ -1,64 +1,48 @@
 /* @flow */
 'use strict';
 
-var React = require('react-native');
+import React, {Component, TextInput, View, Image} from 'react-native';
+import styles from '../Styles/style';
+import login from '../Styles/login';
+import ButtonRounded from './Widgets/ButtonRounded';
+import {Actions} from 'react-native-router-flux';
 
-var styles = require('../Styles/style');
-var login = require('../Styles/login');
-var ButtonRounded = require('./ButtonRounded');
-var AppDispatcher = require('./../Dispatcher/AppDispatcher');
+export default class Login extends Component {
+    
+    constructor(props) {
+        super(props);
+        this.state = {
+            value: ''
+        };
 
-var {
-    View,
-    Text,
-    TextInput,
-    Image
-} = React;
+    }
 
-var Login = React.createClass({
-    login(){
-        var Home = require('./Home');
-        AppDispatcher.dispatch({
-            actionType: 'Navigate',
-            component: Home
-
-        });
-
-    },
-    render: function() {
-        return (
-            <View  style={login.bg}> 
-                
-                <Image source={require('image!logo')} style={login.logo}/>
-                <Text style={styles.logo}>
-                StartReact.com
-                </Text>   
-                <Text style={styles.desc}>
-                React Native Starter Kit
-                </Text>  
-                <View style={login.border}>   
-                    <TextInput
-                        style={login.textInput}
-                        placeholder={'EMAIL'}
-                        placeholderTextColor={'rgba(255, 255, 255, 0.7'} />
-                </View>
-                <View style={login.border}>
-                    <TextInput
-                        style={login.textInput}
-                        placeholder={'PASSWORD'}
-                        secureTextEntry={true}
-                        placeholderTextColor={'rgba(255, 255, 255, 0.7'} />
-                </View>
-                <View style={{marginTop: 15}}>
-                <ButtonRounded                    
-                    onPress={this.login}
-                    text="Login" />   
-                </View>
+    render() {
+        return(
+            <View style={login.color}>
+                <Image source={require('../img/shadow.png')} style={login.shadow}>
+                    <View style={login.bg}>  
+                        <View  style={{position:'relative',borderColor: 'white', borderWidth: 0.8, borderTopWidth: 0, borderRightWidth: 0, borderLeftWidth: 0, margin: 15, marginTop: 5,}}>   
+                            <TextInput
+                                style={login.textInput}
+                                placeholder={'EMAIL'}
+                                placeholderTextColor={'rgba(255, 255, 255, 0.7'} 
+                                onChangeText={(value) => this.setState({value})}
+                                value={this.state.value} />
+                        </View>  
+                        <View  style={{position:'relative',borderColor: 'white', borderWidth: 0.8, borderTopWidth: 0, borderRightWidth: 0, borderLeftWidth: 0, margin: 15, marginTop: 5,}}>  
+                            <TextInput
+                                style={login.textInput}
+                                placeholder={'PASSWORD'}
+                                secureTextEntry={true}
+                                placeholderTextColor={'rgba(255, 255, 255, 0.7'} />
+                        </View>
+                        <ButtonRounded
+                            onPress={()=>Actions.home({data:this.state.value })}
+                            text="Login" />
+                    </View>
+                </Image>
             </View>
         );
     }
-});
-
-
-
-module.exports = Login;
+}

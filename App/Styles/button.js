@@ -11,18 +11,20 @@ module.exports = StyleSheet.create({
 	button: {
 		backgroundColor: '#05A5D1',
 	    padding: 10,
-	    borderColor: '#05A5D1',
-	    borderWidth:0,
-	    borderBottomColor: '#05A5D1',
+	    borderColor: 'transparent',
+	    borderWidth:2,
 	    alignSelf: 'center',
 		borderRadius: 10,
-		width: 200,
-		marginTop: 8,
+		width: 150,
+		height: 45,
+		marginTop: 18
 	},
+	
 	buttonText: {
 		color: '#fff',
 		alignSelf: 'center',
-		fontSize: 17
+		fontSize: 18
 	}
+	
 });
 
