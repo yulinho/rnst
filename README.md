@@ -33,7 +33,6 @@ $ cd NativeStarterKit
 $ npm install 
 ```
 
-<<<<<<< HEAD
 ####4.1. To Run the project using XCode
 
 Open the project in XCode from ios/NativeStarterKit.xcodeproj
