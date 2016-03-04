@@ -40,7 +40,9 @@ export default class RootRouter extends Component {
   				tapToClose={true}
 				openDrawerOffset={0.2}
 				panCloseMask={0.2}
-				content={<ControlPanel />}
+				content={<ControlPanel 
+					ds={[{title:"Home主题",action:"home"},{title:"Account帐号",action:"account"},{title:"Login登陆",action:"login"}]} 
+					closeDrawer={()=>{this.refs.drawer.close()}}/>}
 				>
 					<View style={layout.layout}>
 

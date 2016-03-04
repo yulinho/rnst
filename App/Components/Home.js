@@ -5,7 +5,7 @@ import React, {Component, Text, View, ScrollView} from 'react-native';
 import styles from '../Styles/style';
 import Navbar from './Widgets/Navbar';
 import home from '../Styles/home';
-import ButtonRounded from './Widgets/ButtonRounded';
+import Button from './Widgets/Button';
 import {Actions} from 'react-native-router-flux';
 
 
@@ -16,7 +16,7 @@ export default class Home extends Component {
 	    	<View style={home.color}>
 	     		<Navbar
 	     		    title="Home"
-	     		    style={home.toolbar}    
+	     		    style={home.toolbar}
 	     		/>
 				<ScrollView style={{backgroundColor: 'transparent'}}>
 					<View style={home.listContainer}>
@@ -32,7 +32,10 @@ export default class Home extends Component {
 		 			<View style={home.breakline}>
 		 			</View>
 		 			<View>
-			 			<ButtonRounded
+			 			<Button style={{borderRadius:22}}
+			                onPress={Actions.login}
+			            	text="Logout" />
+			 			<Button
 			                onPress={Actions.login}
 			            	text="Logout" />
 			        </View>

@@ -2,8 +2,8 @@
 'use strict';
 
 var React = require('react-native');
-var primary = require('./variable').brandPrimary;
-var secondary = require('./variable').brandSecondary;
+var primary = require('../Components/Widgets/styles/variable').brandPrimary;
+var secondary = require('../Components/Widgets/styles/variable').brandSecondary;
 
 var {
   StyleSheet,

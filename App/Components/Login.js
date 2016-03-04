@@ -19,13 +19,13 @@ export default class Login extends Component {
 
     render() {
         return(
-            <View style={login.color}>
+            <View style={login.login}>
                 <Image source={require('../img/shadow.png')} style={login.shadow}>
                     <View style={login.bg}>  
                         <View  style={{position:'relative',borderColor: 'white', borderWidth: 0.8, borderTopWidth: 0, borderRightWidth: 0, borderLeftWidth: 0, margin: 15, marginTop: 5,}}>   
                             <TextInput
                                 style={login.textInput}
-                                placeholder={'EMAIL'}
+                                placeholder={'EMAIL11'}
                                 placeholderTextColor={'rgba(255, 255, 255, 0.7'} 
                                 onChangeText={(value) => this.setState({value})}
                                 value={this.state.value} />

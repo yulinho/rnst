@@ -2,7 +2,7 @@
 'use strict';
 
 var React = require('react-native');
-var primary = require('./variable').brandPrimary;
+var primary = require('../Components/Widgets/styles/variable').brandPrimary;
 
 var {
   StyleSheet,
@@ -43,15 +43,16 @@ module.exports = StyleSheet.create({
 	title: {
 		alignSelf: 'center'
 	},
+	/*
 	toolbar: {
-		height: 70,
+		height: 50,
 		backgroundColor: '#322A2A',
 		justifyContent: 'space-between',
 		alignItems: 'center',
 		flexDirection: 'row',
-		padding: 15,
-		paddingTop: 30
-	},
+		//padding: 15,
+		//paddingTop: 15
+	},*/
 	breakline : {
 		marginTop: 15
 	}

@@ -1,4 +1,4 @@
-package com.nativestarter;
+package com.nativestarter.free;
 
 import com.facebook.react.ReactActivity;
 import com.oblador.vectoricons.VectorIconsPackage;

@@ -13,6 +13,6 @@ module.exports = StyleSheet.create({
 		top:0, 
 		left:0, 
 		right: 0, 
-		bottom: 20
+		bottom: 0
 	} 
 });
